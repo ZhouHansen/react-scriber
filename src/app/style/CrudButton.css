@@ -1,0 +1,37 @@
+button{
+  cursor: pointer;
+}
+
+#save{
+	float: right
+}
+
+#save:focus{
+	outline:0 !important;
+}
+
+#fetch:focus{
+	outline:0 !important;
+}
+
+.custom-spinner{
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: top;
+  -webkit-animation: sk-fade-in 0.1s;
+}
+
+.custom-spinner div{
+  width: 8px;
+  height: 8px;
+  animation:sk-bouncedelay 1s infinite ease-in-out;
+  margin-left: 3px;
+}
+
+#save .custom-spinner > div{
+  background-color: #f0ad4e;
+}
+
+#fetch .custom-spinner > div{
+  background-color: #0275d8;
+}

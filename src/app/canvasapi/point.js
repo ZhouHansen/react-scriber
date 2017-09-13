@@ -64,7 +64,6 @@ export function drawPoint({x, y, uid}, currentId){
       pointy = ctrl.pointy
     }
 
-
     drawCtrl.bind(this)({...ctrl, pointx, pointy, isMirror: true})
     drawCtrl.bind(this)({...ctrl, pointx, pointy, isMirror: false})
   })

@@ -40,15 +40,15 @@ class SketchCanvas extends Component {
     emitter.on('fetch', ()=>{
       const { init } = this.props
 
+      this.container.removeAllChildren()
+
+      this.stage.update()
+
       // 清除所有订阅者，释放内存
       emitter.reset()
 
       // 重新订阅fetch和save
       this.save().fetch()
-
-      this.container.removeAllChildren()
-
-      this.stage.update()
 
       var data = JSON.parse(localStorage.getItem("react_sketch_data"))
 
@@ -61,6 +61,8 @@ class SketchCanvas extends Component {
   }
 
   init(data){
+    const {ctrls} = this.props
+
     $('#' + data.drawType).focus()
 
     this.watchContainer({x: data.container.x, y: data.container.y})
@@ -198,6 +200,7 @@ class SketchCanvas extends Component {
       if (nextctrl.isRemove){
         emitter.emit('removeCtrl', {ctrl: nextctrl, ctrls: nextProp.ctrls})
       } else if(ctrl){
+
         if (ctrl.isNew){
           emitter.emit('createCtrl', ctrl)
         } else {

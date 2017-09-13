@@ -36,7 +36,6 @@ class CrudButton extends Component {
       emitter.emit('save')
     }
 
-    // setTimeout has its own e, so we `let id = e.target.id` outside it.
     setTimeout(()=>{
       this.setState({
         fetch: false,
@@ -71,7 +70,7 @@ class CrudButton extends Component {
             disabled={this.state.fetch||this.state.save}>
             {button.text}
             { this.state[button.id] &&
-              <Spinner spinnerName='three-bounce' className='custom-spinner'/>
+              <Spinner className='custom-spinner'/>
             }
           </button>
         )}

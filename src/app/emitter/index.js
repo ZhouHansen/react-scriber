@@ -1,17 +1,17 @@
 import mitt from "mitt"
 
 let all = {}
-let emitter = mitt()
+let events = mitt(all)
 
-emitter.reset = () => {
+events.reset = () => {
   for (let i in all) delete all[i]
 }
 
-let off = emitter.off
+let off = events.off
 
-emitter.off = (type, handler) =>{
+events.off = (type, handler) =>{
   if (!handler) delete all[type]
   else return off(type, handler)
 }
 
-export default emitter
+export default events

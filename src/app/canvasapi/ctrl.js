@@ -45,7 +45,7 @@ function moveCtrl({square, line, x, y, uid, isMirror, cuid, pointx, pointy, eati
         .beginStroke("#f46c51")
         .beginFill("#f46c51")
         .drawRect(-2, -2, 4, 4)
-
+  console.log(pointx, cuid, currentId)
   square.x = x
   square.y = y
 
